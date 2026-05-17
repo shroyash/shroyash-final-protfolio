@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────────── */
+:root {
+  --bg: #050a15;
+  --bg2: #0a1628;
+  --bg3: #0d1f3c;
+  --surface: #0f2444;
+  --surface2: #162d52;
+  --border: #1e3a5f;
+  --border2: #254870;
+  --text: #e8f0fe;
+  --text2: #94a8c8;
+  --text3: #5a7a9e;
+  --accent: #4f9cf9;
+  --accent2: #7c3aed;
+  --accent3: #06b6d4;
+  --grad: linear-gradient(135deg, #4f9cf9, #7c3aed);
+  --grad2: linear-gradient(135deg, #06b6d4, #4f9cf9);
+}
+
+.light {
+  --bg: #f0f4ff;
+  --bg2: #e8edf8;
+  --bg3: #dde4f4;
+  --surface: #ffffff;
+  --surface2: #f5f7ff;
+  --border: #c8d4ee;
+  --border2: #b0c0e0;
+  --text: #0d1f3c;
+  --text2: #3a5080;
+  --text3: #6a84aa;
+  --accent: #2563eb;
+  --accent2: #7c3aed;
+  --accent3: #0891b2;
+}
+
+/* ─── Base ───────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ─── Selection ──────────────────────────────────────────── */
+::selection {
+  background: rgba(79, 156, 249, 0.25);
+  color: var(--text);
+}
+
+/* ─── Gradient Text Utility ──────────────────────────────── */
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grad-text-2 {
+  background: var(--grad2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glow Effects ───────────────────────────────────────── */
+.glow-blue {
+  box-shadow: 0 0 30px rgba(79, 156, 249, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.25);
+}
+
+/* ─── Noise Texture Overlay ─────────────────────────────── */
+.noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.04;
+  z-index: 9999;
+}
+
+/* ─── Section Common ─────────────────────────────────────── */
+.section-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.section-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--accent3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ─── Card Base ──────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--border2);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ─── Button Base ────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: "Space Grotesk", sans-serif;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--grad);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(79, 156, 249, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(79, 156, 249, 0.45);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border2);
+  color: var(--text2);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent2);
+  color: var(--accent2);
+  transform: translateY(-2px);
+}
+
+/* ─── Divider ────────────────────────────────────────────── */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+/* ─── Particles Canvas ───────────────────────────────────── */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── Custom Cursor ──────────────────────────────────────── */
+.cursor-outer {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.15s ease, opacity 0.15s ease, width 0.2s, height 0.2s, border-color 0.2s;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-inner {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: background 0.2s;
+}
+
+.cursor-outer.hovered {
+  width: 52px;
+  height: 52px;
+  border-color: var(--accent2);
+  opacity: 0.5;
+}
+
+/* ─── Active Nav ─────────────────────────────────────────── */
+.nav-link-active {
+  color: var(--accent) !important;
+}
+
+/* ─── Form Inputs ────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 156, 249, 0.15);
+}
+
+.form-input::placeholder {
+  color: var(--text3);
+}
+
+/* ─── Loader ─────────────────────────────────────────────── */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: opacity 0.5s ease;
+}
+
+.loader-bar-track {
+  width: 220px;
+  height: 2px;
+  background: var(--surface);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: var(--grad);
+  border-radius: 2px;
+  animation: loadFill 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes loadFill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ─── Glassmorphism ─────────────────────────────────────── */
+.glass {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ─── Badge ──────────────────────────────────────────────── */
+.badge-winner {
+  background: rgba(234, 179, 8, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.badge-prod {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-new {
+  background: rgba(79, 156, 249, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(79, 156, 249, 0.3);
+}
+
+/* ─── Mobile Menu ────────────────────────────────────────── */
+.mobile-drawer {
+  position: fixed;
+  top: 64px;
+  right: -100%;
+  width: 280px;
+  height: calc(100vh - 64px);
+  background: var(--bg2);
+  border-left: 1px solid var(--border);
+  z-index: 99;
+  transition: right 0.3s ease;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
