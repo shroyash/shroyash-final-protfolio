@@ -52,8 +52,8 @@ export default function Contact() {
       setSending(true);
 
       await emailjs.send(
-        "service_jtmnanr",
-        "template_wpbivgj",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           from_name: form.name,
           from_email: form.email,
@@ -61,7 +61,7 @@ export default function Contact() {
           message: form.message,
           to_email: "shroyash35@gmail.com",
         },
-        "QHUGYBFqzK-IhenEl"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
       toast.success("Message sent successfully 🚀");
