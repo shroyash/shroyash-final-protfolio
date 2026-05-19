@@ -100,30 +100,49 @@ export default function Projects() {
                     className="flex gap-3 px-7 py-4 border-t"
                     style={{ borderColor: "var(--border)" }}
                   >
-                    <motion.a
-                      href={proj.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 text-center text-sm font-semibold py-2 rounded-lg border transition-all"
-                      style={{
-                        background: "var(--bg2)",
-                        borderColor: "var(--border)",
-                        color: "var(--text2)",
-                      }}
-                      whileHover={{ borderColor: "var(--text)", color: "var(--text)" }}
-                    >
-                      ⚡ GitHub
-                    </motion.a>
-                    <motion.a
-                      href={proj.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 text-center text-sm font-semibold py-2 rounded-lg text-white"
-                      style={{ background: "linear-gradient(135deg,#4f9cf9,#7c3aed)" }}
-                      whileHover={{ opacity: 0.9 }}
-                    >
-                      🔗 Live
-                    </motion.a>
+                    {/* GitHub button — only show if github link exists */}
+                    {proj.github && (
+                      <motion.a
+                        href={proj.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 text-center text-sm font-semibold py-2 rounded-lg border transition-all"
+                        style={{
+                          background: "var(--bg2)",
+                          borderColor: "var(--border)",
+                          color: "var(--text2)",
+                        }}
+                        whileHover={{ borderColor: "var(--text)", color: "var(--text)" }}
+                      >
+                        ⚡ GitHub
+                      </motion.a>
+                    )}
+
+                    {/* Live button — show "In Progress" if not live yet */}
+                    {proj.isLive ? (
+                      <motion.a
+                        href={proj.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 text-center text-sm font-semibold py-2 rounded-lg text-white"
+                        style={{ background: "linear-gradient(135deg,#4f9cf9,#7c3aed)" }}
+                        whileHover={{ opacity: 0.9 }}
+                      >
+                        🔗 Live
+                      </motion.a>
+                    ) : (
+                      <span
+                        className="flex-1 text-center text-sm font-semibold py-2 rounded-lg border"
+                        style={{
+                          background: "rgba(251,191,36,0.08)",
+                          borderColor: "rgba(251,191,36,0.25)",
+                          color: "#fbbf24",
+                          cursor: "default",
+                        }}
+                      >
+                        🚧 In Progress
+                      </span>
+                    )}
                   </div>
                 </motion.div>
               </Reveal>

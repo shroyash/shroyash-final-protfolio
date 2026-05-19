@@ -61,7 +61,7 @@ export default function Hero() {
                     1800,
                     "Java Spring Boot Engineer",
                     1800,
-                    "Backend Developer",
+                    "Backend Engineer",
                     1800,
                     "React & Next.js Developer",
                     1800,

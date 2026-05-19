@@ -89,7 +89,7 @@ export const experiences = [
     duration: "Oct 2025 – March 2026",
     period: "6 Months",
     icon: "☕",
-    link: "https://example.com",
+    link: "https://kritimguru.com/",
     linkLabel: "Kritim Guru Project",
     bullets: [
       "Designed and implemented a secure auth system using Spring Security with JWT (access & refresh tokens), RSA encryption, and Redis-based token blacklisting with TTL — reducing unauthorized access risk.",
@@ -100,6 +100,21 @@ export const experiences = [
       "Improved overall API performance via refined database queries and asynchronous background email processing.",
     ],
   },
+  {
+  role: "Freelance Web Developer",
+  company: "Hamro Guru",
+  duration: "2025",
+  period: "Freelance",
+  icon: "🌐",
+  link: "https://hamro-guru-accounting-jyb71rknb-shroyashs-projects.vercel.app",
+  linkLabel: "Hamro Guru Project",
+  bullets: [
+    "Developed a responsive portfolio website for an educator showcasing YouTube video lectures, course notes, and teaching materials integrating YouTube API for dynamic content rendering.",
+    "Built with Next.js and React, ensuring fast page loads, SEO optimization, and mobile first responsive design across all device sizes.",
+    "Managed full project lifecycle independently from client requirements gathering and UI/UX decisions to final deployment on Vercel.",
+    "Delivered end to end as a freelance engagement, demonstrating ability to independently handle real client communication, deadlines, and production deployment.",
+  ],
+},
 ];
 
 export const projects = [
@@ -112,8 +127,9 @@ export const projects = [
     badge: "new",
     badgeLabel: "2026",
     stack: ["Spring Boot", "Kafka", "React", "Next.js 14", "PostgreSQL", "Docker", "Redis", "Spring Security", "WebRTC"],
-    github: "https://github.com/shroyash",
+    github: "https://github.com/shroyash/healthcare-system",
     live: "https://example.com",
+    isLive: false,
     year: "2026",
   },
   {
@@ -125,8 +141,9 @@ export const projects = [
     badge: "winner",
     badgeLabel: "🏆 2nd Runner-Up",
     stack: ["Next.js", "Claude AI API", "TypeScript", "REST APIs"],
-    github: "https://github.com/shroyash",
-    live: "https://example.com",
+    github: "https://github.com/shroyash/prepmates",
+    live: "https://prepmate-your-ai-interview-coach-9mym.vercel.app/",
+    isLive: true,
     year: "2025",
   },
   {
@@ -138,8 +155,9 @@ export const projects = [
     badge: "prod",
     badgeLabel: "Production",
     stack: ["Spring Boot", "Spring Security", "Redis", "PostgreSQL", "JWT", "RSA"],
-    github: "https://github.com/shroyash",
-    live: "https://example.com",
+    github: "",
+    live: "https://kritimguru.com/",
+    isLive: true,
     year: "2025–26",
   },
 ];
@@ -151,7 +169,7 @@ export const certifications = [
     date: "2025",
     icon: "🏆",
     desc: "Recognized for delivering an innovative AI-powered interview platform under competitive hackathon conditions.",
-    link: "https://example.com",
+    link: "https://drive.google.com/file/d/1ymd9eQ2ttDEDq86w_3PHKDtW6Pkt3i0e/view?usp=sharing",
   },
   {
     org: "Kritim Guru / KritimGuru Inc.",

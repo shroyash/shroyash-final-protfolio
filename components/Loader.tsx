@@ -30,7 +30,7 @@ export default function Loader() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            INITIALIZING PORTFOLIO_v2.0
+            INITIALIZING SHROYASH SHRESTHA PORTFOLIO...
           </motion.div>
           <div className="loader-bar-track">
             <div className="loader-bar-fill" />

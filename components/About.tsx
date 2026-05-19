@@ -128,7 +128,7 @@ export default function About() {
               </p>
 
               <p>
-                At Kritim Guru, I built secure authentication flows with JWT + RSA + Redis,
+                At Kritim Mind Technologies, I built secure authentication flows with JWT + RSA + Redis,
                 dynamic mock test engines, and optimized leaderboard systems shipped to
                 real users. I care deeply about SOLID principles, clean code, and choosing
                 the right design pattern for each problem.
