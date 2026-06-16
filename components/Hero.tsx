@@ -97,7 +97,7 @@ export default function Hero() {
                 </Link>
 
                 <a
-                  href="https://www.linkedin.com/in/shroyash-shrestha-3862b2254/"
+                  href="https://www.linkedin.com/in/shroyash"
                   target="_blank"
                   rel="noreferrer"
                 >

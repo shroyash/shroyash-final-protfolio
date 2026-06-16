@@ -11,7 +11,7 @@ export const personal = {
   phone: "9818824609",
   location: "Kathmandu, Nepal",
   github: "https://github.com/shroyash",
-  linkedin: "https://www.linkedin.com/in/shroyash-shrestha-3862b2254/",
+  linkedin: "https://www.linkedin.com/in/shroyash",
   available: true,
 };
 
